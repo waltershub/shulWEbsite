@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import List from './components/list.jsx';
-import Zmanim from './components/zmanim.jsx';
-import Home from './components/home.jsx';
 import {
   BrowserRouter as Router,
   Route,
   Link,
 } from 'react-router-dom';
+import { PageHeader, Breadcrumb, Tab, Tabs } from 'react-bootstrap';
+import List from './components/list.jsx';
+import Zmanim from './components/zmanim.jsx';
+import Home from './components/home.jsx';
 
 
 class App extends React.Component {
@@ -17,22 +18,23 @@ class App extends React.Component {
     this.state = {
       shuirim: [],
       zmanim: [],
+      shulImages: ['http://placekitten.com/g/400/200'],
     };
 
     this.getShuirim = this.getShuirim.bind(this);
     this.getZmanim = this.getZmanim.bind(this);
+    this.getShulImages = this.getShulImages.bind(this);
     this.getShuirim();
     this.getZmanim();
   }
 
   componentDidMount() {
-
+    this.getShulImages();
   }
 
   getShuirim() {
     axios.get('shuirim')
       .then((response) => {
-        console.log(response.data.Items);
         this.setState({ shuirim: response.data.Items });
       });
   }
@@ -40,25 +42,46 @@ class App extends React.Component {
   getZmanim() {
     axios.get('zmanim')
       .then((response) => {
-        console.log(response.data);
         this.setState({ zmanim: response.data });
       });
+  }
+
+  getShulImages() {
+    const path = '/assets/images/slideshow/';
+    const images = [];
+    for (let i = 1; i < 6; i++) {
+      images.push(`${path + i}.JPG`);
+    }
+    console.log(images);
+    this.setState({ shulImages: images });
   }
 
   render() {
     return (
       <Router>
         <div>
-          <h1>Cong Sharay Shamyim
-          </h1>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/zmanim" >Zmanim</Link></li>
-            <li><Link to="/List">Shuirim</Link></li>
-          </ul>
-
-          <hr />
-          <Route exact path="/" component={Home} />
+          <PageHeader> Cong Sharay Shamyim
+            <small>
+              <Breadcrumb >
+                <Breadcrumb.Item componentClass="spann">
+                  <Link to="/">Home</Link>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item componentClass="spann">
+                  <Link to="/zmanim">Zmanim</Link>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item componentClass="spann">
+                  <Link to="/List">Shuirim</Link>
+                </Breadcrumb.Item>
+              </Breadcrumb>
+            </small>
+          </PageHeader>
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <Home {...props} images={this.state.shulImages} />
+            )}
+          />
           <Route
             path="/zmanim"
             render={props => (

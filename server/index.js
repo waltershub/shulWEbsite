@@ -5,7 +5,7 @@ const router = require('./controllers/routers');
 const app = express();
 
 
-app.use(express.static(`${__dirname}/../react-client/dist`));
+// app.use(express.static(`${__dirname}/../react-client/dist`));
 
 app.use(express.static(`${__dirname}/../react-client/dist`));
 app.use(bodyParser.urlencoded({ extended: false }));

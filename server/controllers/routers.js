@@ -7,4 +7,5 @@ router.get('/shuirim', controllers.shuirim);
 
 router.get('/zmanim', controllers.zmanim);
 
+router.get('/shulImages', controllers.shulImages);
 module.exports = router;
