@@ -28,7 +28,7 @@ class App extends React.Component {
     this.getZmanim();
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getShulImages();
   }
 
@@ -58,7 +58,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router className="main">
         <div>
           <PageHeader> Cong Sharay Shamyim
             <small>

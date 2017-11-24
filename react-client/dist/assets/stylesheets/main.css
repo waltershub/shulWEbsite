@@ -1,0 +1,21 @@
+
+.main{
+  background-color: blue;
+}
+.page-header{
+  background: #d5f4e6;
+}
+.home{
+  background-color: coral;
+}
+
+.fade {
+   opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   }
+
+   .fade:hover {
+      opacity: 0.5;
+      }
