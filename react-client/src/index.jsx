@@ -59,22 +59,27 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
-          <PageHeader> Cong Sharay Shamyim
-            <small>
-              <Breadcrumb >
-                <Breadcrumb.Item componentClass="spann">
-                  <Link to="/">Home</Link>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item componentClass="spann">
-                  <Link to="/zmanim">Zmanim</Link>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item componentClass="spann">
-                  <Link to="/List">Shuirim</Link>
-                </Breadcrumb.Item>
-              </Breadcrumb>
-            </small>
-          </PageHeader>
+        <div >
+          <center>
+            <div className="header">
+              <span className="title shadow-box ">
+              KHAL SHAR HASHAMYIM
+              </span>
+              <small>
+                <Breadcrumb >
+                  <Breadcrumb.Item className="shadow-box"componentClass="spann">
+                    <Link to="/">Home</Link>
+                  </Breadcrumb.Item>
+                  <Breadcrumb.Item className="shadow-box" componentClass="spann">
+                    <Link to="/zmanim">Zmanim</Link>
+                  </Breadcrumb.Item>
+                  <Breadcrumb.Item className="shadow-box" componentClass="spann">
+                    <Link to="/List">Shuirim</Link>
+                  </Breadcrumb.Item>
+                </Breadcrumb>
+              </small>
+            </div>
+          </center>
           <Route
             exact
             path="/"
@@ -94,6 +99,9 @@ class App extends React.Component {
               <List {...props} shuirim={this.state.shuirim} />
             )}
           />
+          <footer>
+            ave m
+          </footer>
         </div>
       </Router>
     );

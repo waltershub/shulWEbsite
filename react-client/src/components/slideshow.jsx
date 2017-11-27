@@ -3,19 +3,21 @@ import React from 'react';
 import Slide from 'react-slick';
 
 const settings = {
-  // dots: true,
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
+  dots: true,
   autoplay: true,
-  autoplaySpeed: 1000,
+  autoplaySpeed: 3000,
+  fade: true,
+  centerPadding: true,
+
 
 };
 
 const Slideshow = props => (
-  <Slide{...settings}>
+
+  <Slide className="container" {...settings} >
     {props.images.map((image, i) => (<img key={i} src={image} alt="http://placekitten.com/g/400/200" />))}
   </Slide>
+
 );
 
 export default Slideshow;

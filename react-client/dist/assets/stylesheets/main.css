@@ -1,0 +1,62 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 40px;
+  width: 40%;
+  color: #333;
+  /*background: #419be0;*/
+}
+
+.main-body{
+  margin-left: 50px;
+  margin-right: 50px;
+    background-image: url('/assets/images/logo/logotranssmall.png'), url('/assets/images/logo/wood7.jpg');
+}
+
+body{
+  background-color: black;
+  color: white;
+  margin-top: 0px;
+}
+
+.slide {
+    width: 250px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+
+.header{
+  height: 360px;
+  background-image: url('/assets/images/logo/header1.png');
+  font-size: 500%;
+  margin-bottom: 40px;
+
+
+}
+.breadcrumb {
+  padding: 180px;
+  background: none;
+ border-color: transparent;
+ border-style: none;
+ font-size: 50%;
+}
+
+
+
+.shadow-box{
+  color: white;
+   /*font: bold 24px/45px Helvetica, Sans-Serif;*/
+   /*letter-spacing: -1px;*/
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px;
+}
+.title{
+  margin-top: 100px;
+}
