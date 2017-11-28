@@ -19,6 +19,7 @@ class App extends React.Component {
       shuirim: [],
       zmanim: [],
       shulImages: ['http://placekitten.com/g/400/200'],
+      playlist: [],
     };
 
     this.getShuirim = this.getShuirim.bind(this);
@@ -36,6 +37,16 @@ class App extends React.Component {
     axios.get('shuirim')
       .then((response) => {
         this.setState({ shuirim: response.data.Items });
+        const playlist = [];
+        response.data.Items.forEach((shuir) => {
+          console.log(shuir);
+          playlist.push({
+            name: shuir.title.slice(0, shuir.title.length - 4),
+            src: shuir.url,
+            img: '/assets/images/slideshow/8.png',
+          });
+          this.setState({ playlist });
+        });
       });
   }
 
@@ -96,7 +107,7 @@ class App extends React.Component {
           <Route
             path="/List"
             render={props => (
-              <List {...props} shuirim={this.state.shuirim} />
+              <List {...props} shuirim={this.state.playlist} />
             )}
           />
           <footer>

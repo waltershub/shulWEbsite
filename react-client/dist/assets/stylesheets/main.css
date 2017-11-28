@@ -15,7 +15,7 @@
 .main-body{
   margin-left: 50px;
   margin-right: 50px;
-    background-image: url('/assets/images/logo/logotranssmall.png'), url('/assets/images/logo/wood7.jpg');
+    background-image:url('/assets/images/logo/logotranssmall.png'), url('/assets/images/logo/greywood.jpg');
 }
 
 body{
@@ -59,4 +59,11 @@ body{
 }
 .title{
   margin-top: 100px;
+}
+
+.player{
+  color: black;
+  background-image: url('/assets/images/logo/logotranssmall.png'), url('/assets/images/logo/greywood.jpg');
+margin-left: 200px;
+margin-right: 200px;
 }

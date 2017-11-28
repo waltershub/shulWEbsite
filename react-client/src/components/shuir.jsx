@@ -3,9 +3,9 @@ import ReactAudioPlayer from 'react-audio-player';
 
 const Shuir = props => (
   <div>
-    <h4>{props.shuir.title.slice(0, props.shuir.title.length - 4)}</h4>
+    <h4>{props.shuir.name}</h4>
     <ReactAudioPlayer
-      src={props.shuir.url}
+      src={props.shuir.src}
       controls
     />
   </div>
