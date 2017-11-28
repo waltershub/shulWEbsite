@@ -15,7 +15,7 @@ const settings = {
 const Slideshow = props => (
 
   <Slide className="container" {...settings} >
-    {props.images.map((image, i) => (<img key={i} src={image} alt="http://placekitten.com/g/400/200" />))}
+    {props.images.map((image, i) => (<img key={image} src={image} alt="http://placekitten.com/g/400/200" />))}
   </Slide>
 
 );

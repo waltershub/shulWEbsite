@@ -1,13 +1,12 @@
 import React from 'react';
-import ReactAudioPlayer from 'react-audio-player';
+import { Button } from 'react-bootstrap';
 
 const Shuir = props => (
-  <div>
+  <div className="shadow-box">
     <h4>{props.shuir.name}</h4>
-    <ReactAudioPlayer
-      src={props.shuir.src}
-      controls
-    />
+    <Button bsStyle="primary" href={props.shuir.src} download={`${props.shuir.name}.wav`}>
+      Download
+    </Button>
   </div>
 );
 
