@@ -18,15 +18,18 @@ class App extends React.Component {
     this.state = {
       shuirim: [],
       zmanim: [],
-      shulImages: ['http://placekitten.com/g/400/200'],
+      schedule: [],
+      shulImages: [],
       playlist: [],
     };
 
     this.getShuirim = this.getShuirim.bind(this);
     this.getZmanim = this.getZmanim.bind(this);
     this.getShulImages = this.getShulImages.bind(this);
+    this.getShulSchedule = this.getShulSchedule.bind(this);
     this.getShuirim();
     this.getZmanim();
+    this.getShulSchedule();
   }
 
   componentDidMount() {
@@ -39,7 +42,6 @@ class App extends React.Component {
         this.setState({ shuirim: response.data.Items });
         const playlist = [];
         response.data.Items.forEach((shuir) => {
-          console.log(shuir);
           playlist.push({
             name: shuir.title.slice(0, shuir.title.length - 4),
             src: shuir.url,
@@ -57,13 +59,19 @@ class App extends React.Component {
       });
   }
 
+  getShulSchedule() {
+    axios.get('shulSchedule')
+      .then((response) => {
+        this.setState({ zmanim: response.data });
+      });
+  }
+
   getShulImages() {
     const path = '/assets/images/slideshow/';
     const images = [];
     for (let i = 1; i < 6; i++) {
       images.push(`${path + i}.JPG`);
     }
-    console.log(images);
     this.setState({ shulImages: images });
   }
 
@@ -101,7 +109,7 @@ class App extends React.Component {
           <Route
             path="/zmanim"
             render={props => (
-              <Zmanim {...props} zmanim={this.state.zmanim} />
+              <Zmanim {...props} timeprops={{ zmanim: this.state.zmanim, schedule: this.state.schedule }} />
             )}
           />
           <Route
