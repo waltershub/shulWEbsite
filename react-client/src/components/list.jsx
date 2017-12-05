@@ -1,6 +1,7 @@
 import React from 'react';
 import Shuir from './shuir.jsx';
 import Audio from 'react-audioplayer';
+import Columns from 'react-columns';
 
 const List = props => (
   <center>
@@ -12,7 +13,9 @@ const List = props => (
         fullPlayer
       />
       <h4> Shuirim </h4>
-      {props.shuirim.map(shuir => (<Shuir key={shuir.url} shuir={shuir} />))}
+      <Columns >
+        {props.shuirim.map(shuir => (<Shuir key={shuir.url} shuir={shuir} />))}
+      </Columns>
     </div>
   </center>
 );

@@ -62,7 +62,7 @@ class App extends React.Component {
   getShulSchedule() {
     axios.get('shulSchedule')
       .then((response) => {
-        this.setState({ zmanim: response.data });
+        this.setState({ schedule: response.data });
       });
   }
 
