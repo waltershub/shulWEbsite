@@ -3,7 +3,7 @@ const moment = require('moment');
 exports.roundTime = (time) => {
   let unRoudedTime = moment(time);
   const checkTime = Number(time.format('h:mm A')[3]);
-  if ((checkTime > 5 && checkTime > 7) || checkTime > 2) {
+  if (checkTime > 5 || checkTime > 2) {
     while (unRoudedTime.format('h:mm A')[3] !== '0' && unRoudedTime.format('h:mm A')[3] !== '5') {
       unRoudedTime = unRoudedTime.add(1, 'm');
     }
@@ -12,6 +12,7 @@ exports.roundTime = (time) => {
       unRoudedTime = unRoudedTime.subtract(1, 'm');
     }
   }
+  console.log(unRoudedTime);
   return unRoudedTime.format('h:mm A');
 };
 

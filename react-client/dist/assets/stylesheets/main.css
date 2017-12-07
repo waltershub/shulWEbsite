@@ -15,7 +15,7 @@
 .main-body{
   margin-left: 50px;
   margin-right: 50px;
-    background-image:url('/assets/images/logo/logotranssmall.png'), url('/assets/images/logo/greywood.jpg');
+  background-image:url('/assets/images/logo/logotranssmall.png'), url('/assets/images/logo/greywood.jpg');
 }
 
 body{
@@ -25,6 +25,27 @@ body{
 }
 .donate{
   float: right;
+  margin-top:  5px;
+  margin-right: 5px;
+}
+
+.zmanim{
+  font-size: 200%;
+  color: white;
+   background: rgb(0, 0, 0);
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px;
+}
+.footer{
+  height:50px;
+  background-color: grey;
+  margin-top: 10px;
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
 }
 .slide {
     width: 250px;

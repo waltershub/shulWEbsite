@@ -10,7 +10,8 @@ import { PageHeader, Breadcrumb, Tab, Tabs } from 'react-bootstrap';
 import List from './components/list.jsx';
 import Zmanim from './components/zmanim.jsx';
 import Home from './components/home.jsx';
-
+import Header from './components/header.jsx';
+import Footer from './components/footer.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -79,26 +80,7 @@ class App extends React.Component {
     return (
       <Router>
         <div >
-          <center>
-            <div className="header">
-              <span className="title shadow-box ">
-              KHAL SHAR HASHAMYIM
-              </span>
-              <small>
-                <Breadcrumb >
-                  <Breadcrumb.Item className="shadow-box"componentClass="spann">
-                    <Link to="/">Home</Link>
-                  </Breadcrumb.Item>
-                  <Breadcrumb.Item className="shadow-box" componentClass="spann">
-                    <Link to="/zmanim">Zmanim</Link>
-                  </Breadcrumb.Item>
-                  <Breadcrumb.Item className="shadow-box" componentClass="spann">
-                    <Link to="/List">Shuirim</Link>
-                  </Breadcrumb.Item>
-                </Breadcrumb>
-              </small>
-            </div>
-          </center>
+          <Header />
           <Route
             exact
             path="/"
@@ -118,9 +100,7 @@ class App extends React.Component {
               <List {...props} shuirim={this.state.playlist} />
             )}
           />
-          <footer>
-            ave m
-          </footer>
+          <Footer />
         </div>
       </Router>
     );
