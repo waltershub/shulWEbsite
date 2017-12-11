@@ -22,12 +22,14 @@ class App extends React.Component {
       schedule: [],
       shulImages: [],
       playlist: [],
+      autoplay: false,
     };
 
     this.getShuirim = this.getShuirim.bind(this);
     this.getZmanim = this.getZmanim.bind(this);
     this.getShulImages = this.getShulImages.bind(this);
     this.getShulSchedule = this.getShulSchedule.bind(this);
+    this.setplaying = this.setplaying.bind(this);
     this.getShuirim();
     this.getZmanim();
     this.getShulSchedule();
@@ -40,7 +42,7 @@ class App extends React.Component {
   getShuirim() {
     axios.get('shuirim')
       .then((response) => {
-        this.setState({ shuirim: response.data.Items });
+      //  this.setState({ shuirim: response.data.Items });
         const playlist = [];
         response.data.Items.forEach((shuir) => {
           playlist.push({
@@ -48,11 +50,16 @@ class App extends React.Component {
             src: shuir.url,
             img: '/assets/images/slideshow/8.png',
           });
-          this.setState({ playlist });
+          this.setState({ playlist: [playlist[0]] });
+          this.setState({ shuirim: playlist });
         });
       });
   }
 
+  setplaying(index) {
+    console.log(this.state.shuirim[index]);
+    this.setState({ playlist: [this.state.shuirim[index]] });
+  }
   getZmanim() {
     axios.get('zmanim')
       .then((response) => {
@@ -97,7 +104,12 @@ class App extends React.Component {
           <Route
             path="/List"
             render={props => (
-              <List {...props} shuirim={this.state.playlist} />
+              <List
+                {...props}
+                shuirimprops={{
+                  playlist: this.state.playlist, shuirim: this.state.shuirim, setplaying: this.setplaying, autoplay: this.state.autoplay,
+                }}
+              />
             )}
           />
         </div>

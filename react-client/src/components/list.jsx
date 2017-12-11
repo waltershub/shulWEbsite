@@ -9,12 +9,13 @@ const List = props => (
       <Audio
         width={600}
         height={400}
-        playlist={props.shuirim}
+        playlist={props.shuirimprops.playlist}
         fullPlayer
         color="#212121"
+        autoplay={props.shuirimprops.autoplay}
       />
       <Columns >
-        {props.shuirim.map(shuir => (<Shuir key={shuir.url} shuir={shuir} />))}
+        {props.shuirimprops.shuirim.map((shuir, i) => (<Shuir key={shuir.url} shuir={shuir} index={i} setplaying={props.shuirimprops.setplaying} />))}
       </Columns>
     </div>
   </center>
