@@ -11,6 +11,7 @@ const List = props => (
         height={400}
         playlist={props.shuirim}
         fullPlayer
+        color="#212121"
       />
       <Columns >
         {props.shuirim.map(shuir => (<Shuir key={shuir.url} shuir={shuir} />))}

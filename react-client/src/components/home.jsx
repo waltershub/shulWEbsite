@@ -8,12 +8,11 @@ const Home = props => (
   <div className="main-body ">
     <Columns columns={2}>
       <div className="zmanim">
-        <h4 >Zmanim</h4>
+        <h4 className="shadow-box zman-title">Zmanim</h4>
         {props.timeprops.zmanim.map((zman, i) => (<Zman key={zman[1]} zman={zman} />))}
       </div>
-
       <div className="zmanim">
-        <h4>Shabbas Schedule</h4>
+        <h4 className="shadow-box zman-title">Shabbas Schedule</h4>
         {props.timeprops.schedule.map((zman, i) => (<Zman key={zman[1]} zman={zman} />))}
       </div>
 

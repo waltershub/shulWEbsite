@@ -6,7 +6,7 @@ import Columns from 'react-columns';
 
 
 const Zman = props => (
-  <div>
+  <div className="shadow-box">
     <Columns columns={2}>
       <text className="left">{props.zman[0]}</text>
       <text className="right">{props.zman[1]}</text>
