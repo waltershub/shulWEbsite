@@ -4,7 +4,7 @@ import Audio from 'react-audioplayer';
 import Columns from 'react-columns';
 
 const List = props => (
-  <center>
+  <center >
     <div className="player">
       <Audio
         width={600}
@@ -12,7 +12,6 @@ const List = props => (
         playlist={props.shuirim}
         fullPlayer
       />
-      <h4> Shuirim </h4>
       <Columns >
         {props.shuirim.map(shuir => (<Shuir key={shuir.url} shuir={shuir} />))}
       </Columns>

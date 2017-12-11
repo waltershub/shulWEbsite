@@ -100,7 +100,6 @@ class App extends React.Component {
               <List {...props} shuirim={this.state.playlist} />
             )}
           />
-          <Footer />
         </div>
       </Router>
     );
