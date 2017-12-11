@@ -34,7 +34,7 @@ body{
 }
 
 .zmanim{
-  font-size: 200%;
+  font-size: 150%;
   color: white;
    background: rgb(0, 0, 0);
    background: rgba(0, 0, 0, 0.7);
@@ -106,6 +106,13 @@ body{
 
 }
 
+.left{
+float: left;
+}
+
+.right{
+  float: right;
+}
 .homepic{
   margin: 60px;
   padding:1px;

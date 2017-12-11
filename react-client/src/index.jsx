@@ -85,7 +85,7 @@ class App extends React.Component {
             exact
             path="/"
             render={props => (
-              <Home {...props} images={this.state.shulImages} />
+              <Home {...props} timeprops={{ zmanim: this.state.zmanim, schedule: this.state.schedule }} />
             )}
           />
           <Route
