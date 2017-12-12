@@ -22,7 +22,7 @@ class App extends React.Component {
       schedule: [],
       shulImages: [],
       playlist: [],
-      autoplay: false,
+      autoplayref: undefined,
     };
 
     this.getShuirim = this.getShuirim.bind(this);
@@ -30,6 +30,8 @@ class App extends React.Component {
     this.getShulImages = this.getShulImages.bind(this);
     this.getShulSchedule = this.getShulSchedule.bind(this);
     this.setplaying = this.setplaying.bind(this);
+    this.autoplayrefset = this.autoplayrefset.bind(this);
+    this.stopPlaying = this.stopPlaying.bind(this);
     this.getShuirim();
     this.getZmanim();
     this.getShulSchedule();
@@ -58,7 +60,14 @@ class App extends React.Component {
 
   setplaying(index) {
     console.log(this.state.shuirim[index]);
-    this.setState({ playlist: [this.state.shuirim[index]] });
+    this.setState({ playlist: [this.state.shuirim[index]] }, () => {
+      ReactDOM.findDOMNode(this.state.autoplayref).dispatchEvent(new Event('audio-skip-to-next'));
+      ReactDOM.findDOMNode(this.state.autoplayref).dispatchEvent(new Event('audio-play'));
+    });
+  }
+
+  stopPlaying() {
+    ReactDOM.findDOMNode(this.state.autoplayref).dispatchEvent(new Event('pause'));
   }
   getZmanim() {
     axios.get('zmanim')
@@ -82,7 +91,9 @@ class App extends React.Component {
     }
     this.setState({ shulImages: images });
   }
-
+  autoplayrefset(el) {
+    this.setState({ autoplayref: el });
+  }
   render() {
     return (
       <Router>
@@ -107,7 +118,7 @@ class App extends React.Component {
               <List
                 {...props}
                 shuirimprops={{
-                  playlist: this.state.playlist, shuirim: this.state.shuirim, setplaying: this.setplaying, autoplay: this.state.autoplay,
+                  playlist: this.state.playlist, shuirim: this.state.shuirim, setplaying: this.setplaying, playerref: this.state.autoplayref, stopPlaying: this.stopPlaying, autoplayref: this.autoplayrefset,
                 }}
               />
             )}

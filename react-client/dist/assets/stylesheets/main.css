@@ -22,6 +22,9 @@
 body{
   background-image:url('/assets/images/logo/logotranssmall.png'), url('/assets/images/logo/greywood.jpg');
   /*background-color: black;*/
+  background-repeat: repeat,
+      no-repeat;
+  background-size: 20%, cover;
   color: white;
   margin-top: 0px;
 
@@ -86,6 +89,9 @@ a {
 .shuir{
  color: white;
  text-align: left;
+ margin: 10px;
+ padding: 10px;
+ width: 50%;
 }
 
 
@@ -95,7 +101,7 @@ a {
    /*letter-spacing: -1px;*/
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);
-   padding: 10px;
+   background-size: 50%;
 }
 
 .shadow-box{
@@ -157,3 +163,99 @@ float: left;
 margin-left: 200px;
 margin-right: 200px;
 }*/
+
+.shuirim{
+  margin: 30px;
+}
+
+.download {
+  color: #FFFFFF;
+  background-color: #040008;
+  border-color: #000000;
+}
+
+.download:hover,
+.download:focus,
+.download:active,
+.download.active,
+.open .dropdown-toggle.download {
+  color: #FFFFFF;
+  background-color: #1E1B21;
+  border-color: #000000;
+}
+
+.download:active,
+.download.active,
+.open .dropdown-toggle.download {
+  background-image: none;
+}
+
+.download.disabled,
+.download[disabled],
+fieldset[disabled] .download,
+.download.disabled:hover,
+.download[disabled]:hover,
+fieldset[disabled] .download:hover,
+.download.disabled:focus,
+.download[disabled]:focus,
+fieldset[disabled] .download:focus,
+.download.disabled:active,
+.download[disabled]:active,
+fieldset[disabled] .download:active,
+.download.disabled.active,
+.download[disabled].active,
+fieldset[disabled] .download.active {
+  background-color: #040008;
+  border-color: #000000;
+}
+
+.download .badge {
+  color: #040008;
+  background-color: #FFFFFF;
+}
+
+.play {
+  color: #050000;
+  background-color: #FFFCFC;
+  border-color: #;
+}
+
+.play:hover,
+.play:focus,
+.play:active,
+.play.active,
+.open .dropdown-toggle.play {
+  color: #050000;
+  background-color: #B4B1B8;
+  border-color: #;
+}
+
+.play:active,
+.play.active,
+.open .dropdown-toggle.play {
+  background-image: none;
+}
+
+.play.disabled,
+.play[disabled],
+fieldset[disabled] .play,
+.play.disabled:hover,
+.play[disabled]:hover,
+fieldset[disabled] .play:hover,
+.play.disabled:focus,
+.play[disabled]:focus,
+fieldset[disabled] .play:focus,
+.play.disabled:active,
+.play[disabled]:active,
+fieldset[disabled] .play:active,
+.play.disabled.active,
+.play[disabled].active,
+fieldset[disabled] .play.active {
+  background-color: #FFFCFC;
+  border-color: #;
+}
+
+.play .badge {
+  color: #FFFCFC;
+  background-color: #050000;
+}
