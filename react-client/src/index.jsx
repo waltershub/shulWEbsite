@@ -21,7 +21,7 @@ class App extends React.Component {
       zmanim: [],
       schedule: [],
       shulImages: [],
-      playlist: [],
+      playlist: '',
       autoplayref: undefined,
     };
 
@@ -52,7 +52,7 @@ class App extends React.Component {
             src: shuir.url,
             img: '/assets/images/slideshow/8.png',
           });
-          this.setState({ playlist: [playlist[0]] });
+          // this.setState({ playlist: playlist[0] });
           this.setState({ shuirim: playlist });
         });
       });
@@ -60,9 +60,7 @@ class App extends React.Component {
 
   setplaying(index) {
     console.log(this.state.shuirim[index]);
-    this.setState({ playlist: [this.state.shuirim[index]] }, () => {
-      ReactDOM.findDOMNode(this.state.autoplayref).dispatchEvent(new Event('audio-skip-to-next'));
-      ReactDOM.findDOMNode(this.state.autoplayref).dispatchEvent(new Event('audio-play'));
+    this.setState({ playlist: this.state.shuirim[index] }, () => {
     });
   }
 
