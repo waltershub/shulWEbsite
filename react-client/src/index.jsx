@@ -22,7 +22,7 @@ class App extends React.Component {
       schedule: [],
       shulImages: [],
       playlist: '',
-      autoplayref: undefined,
+      autoplay: true,
     };
 
     this.getShuirim = this.getShuirim.bind(this);
@@ -60,12 +60,13 @@ class App extends React.Component {
 
   setplaying(index) {
     console.log(this.state.shuirim[index]);
+    this.setState({ autoplay: true });
     this.setState({ playlist: this.state.shuirim[index] }, () => {
     });
   }
 
   stopPlaying() {
-    ReactDOM.findDOMNode(this.state.autoplayref).dispatchEvent(new Event('pause'));
+    this.setState({ playlist: '' });
   }
   getZmanim() {
     axios.get('zmanim')
@@ -116,7 +117,7 @@ class App extends React.Component {
               <List
                 {...props}
                 shuirimprops={{
-                  playlist: this.state.playlist, shuirim: this.state.shuirim, setplaying: this.setplaying, playerref: this.state.autoplayref, stopPlaying: this.stopPlaying, autoplayref: this.autoplayrefset,
+                  playlist: this.state.playlist, shuirim: this.state.shuirim, setplaying: this.setplaying, playerref: this.state.autoplayref, stopPlaying: this.stopPlaying, autoplay: this.state.autoplay,
                 }}
               />
             )}

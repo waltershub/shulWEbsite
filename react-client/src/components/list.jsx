@@ -13,9 +13,11 @@ class List extends React.Component {
   componentWillUnmount() {
     this.props.shuirimprops.stopPlaying();
   }
+
   render() {
     return (
       <center >
+        <img className="homepic shuirpic"src="/assets/images/slideshow/shuirim.png" alt="https://www.w3schools.com/colors/colors_picker.asp" />
         <div className="player">
           <ReactAudioPlayer
             src={this.props.shuirimprops.playlist.src}

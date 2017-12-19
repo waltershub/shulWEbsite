@@ -12,7 +12,6 @@ const Home = props => (
   <center>
     <Donate />
     <div className="header">
-
       <span className="title shadow-box ">
           KHAL SHAR HASHAMYIM
       </span>
