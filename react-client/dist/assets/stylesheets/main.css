@@ -36,6 +36,11 @@ body{
   margin-right: 5px;
 }
 
+.donateImg{
+  height: 20%;
+  width:20%;
+}
+
 .zmanim{
   font-size: 150%;
   /*color: white;
