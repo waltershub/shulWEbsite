@@ -9,7 +9,7 @@ const Shuir = props => (
       <Button bsSize="large" className="left download" href={props.shuir.src} download={`${props.shuir.name}.wav`}>
       Download
       </Button>
-      <Button bsSize="large" className="right play " onClick={() => (props.setplaying(props.index))}>
+      <Button bsSize="large" className="right play " onClick={() => (props.setplaying(props.shuir.name))}>
       play
       </Button>
     </Columns>

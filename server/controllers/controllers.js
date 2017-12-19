@@ -3,7 +3,7 @@ const axios = require('axios');
 const fs = require('fs');
 const moment = require('moment');
 const schedule = require('./schedule-utilties');
-
+const { generateSignedUrl } = require('./signed-url.js');
 
 exports.shuirim = (req, res) => {
   db.Shuirim.scan()
@@ -37,6 +37,14 @@ exports.shulSchedule = (req, res) => {
       res.send(shulSchedule);
     });
 };
+
+exports.signedUrl = (req, res) => {
+  console.log('controllers', req.body);
+  generateSignedUrl(req.body.shuir, (url) => {
+    res.send(url);
+  });
+};
+
 exports.shulImages = (req, res) => {
   const folder = '../images';
   fs.readdir(folder, (err, files) => {

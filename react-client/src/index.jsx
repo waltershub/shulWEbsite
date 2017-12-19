@@ -58,11 +58,17 @@ class App extends React.Component {
       });
   }
 
-  setplaying(index) {
-    console.log(this.state.shuirim[index]);
-    this.setState({ autoplay: true });
-    this.setState({ playlist: this.state.shuirim[index] }, () => {
-    });
+  setplaying(name) {
+    console.log(name);
+
+    axios.post('signedUrl', { shuir: name })
+      .then((response) => {
+        console.log(response.data);
+        this.setState({ playlist: response.data }, () => {
+          console.log(this.state.playlist);
+          this.setState({ autoplay: true });
+        });
+      });
   }
 
   stopPlaying() {

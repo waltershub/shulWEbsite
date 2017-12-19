@@ -11,5 +11,6 @@ router.get('/shulSchedule', controllers.shulSchedule);
 
 router.get('/shulImages', controllers.shulImages);
 
+router.post('/signedUrl', controllers.signedUrl);
 
 module.exports = router;
