@@ -6,7 +6,7 @@ const Shuir = props => (
   <div className="shuir">
     <h4 >{props.shuir.name}</h4>
     <Columns>
-      <Button bsSize="large" className="left download" href={props.shuir.src} download={`${props.shuir.name}.wav`}>
+      <Button bsSize="large" className="left download" onClick={(() => (props.download(props.shuir.name)))}href={props.url} download={`${props.shuir.name}.wav`}>
       Download
       </Button>
       <Button bsSize="large" className="right play " onClick={() => (props.setplaying(props.shuir.name))}>

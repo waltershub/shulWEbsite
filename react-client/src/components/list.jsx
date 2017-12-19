@@ -4,6 +4,8 @@ import Audio from 'react-audioplayer';
 import Columns from 'react-columns';
 import ReactDOM from 'react-dom';
 import ReactAudioPlayer from 'react-audio-player';
+import axios from 'axios';
+
 
 class List extends React.Component {
   constructor(props) {
@@ -20,10 +22,13 @@ class List extends React.Component {
   }
 
   getDownload(name) {
+    this.setState({ downloadUrl: '' });
     axios.post('signedUrl', { shuir: name })
       .then((response) => {
         console.log(response.data);
-        this.setState({ downloadUrl: response.data });
+        this.setState({ downloadUrl: response.data }, () => {
+          setTimeout(5000, () => (this.setState({ downloadUrl: '' }).bind(this)));
+        });
       });
   }
 
