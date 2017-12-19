@@ -3,8 +3,9 @@ const axios = require('axios');
 const fs = require('fs');
 const moment = require('moment');
 const schedule = require('./schedule-utilties');
-const { generateSignedUrl } = require('./signed-url.js');
+const { generateSignedUrl, updateConfig } = require('./signed-url.js');
 
+updateConfig();
 exports.shuirim = (req, res) => {
   db.Shuirim.scan()
     .loadAll()

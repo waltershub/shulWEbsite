@@ -25,10 +25,16 @@ class List extends React.Component {
     this.setState({ downloadUrl: '' });
     axios.post('signedUrl', { shuir: name })
       .then((response) => {
-        console.log(response.data);
-        this.setState({ downloadUrl: response.data }, () => {
-          setTimeout(5000, () => (this.setState({ downloadUrl: '' }).bind(this)));
-        });
+        const link = document.createElement('a');
+        link.download = `${name}.wave`;
+        link.href = response.data;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        // console.log(response.data);
+        // this.setState({ downloadUrl: response.data }, () => {
+        //   setTimeout(5000, () => (this.setState({ downloadUrl: '' }).bind(this)));
+        // });
       });
   }
 
