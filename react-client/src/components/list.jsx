@@ -26,15 +26,9 @@ class List extends React.Component {
     axios.post('signedUrl', { shuir: name })
       .then((response) => {
         const link = document.createElement('a');
-        link.download = `${name}.wave`;
+        link.download = `${name}.wav`;
         link.href = response.data;
-        document.body.appendChild(link);
         link.click();
-        document.body.removeChild(link);
-        // console.log(response.data);
-        // this.setState({ downloadUrl: response.data }, () => {
-        //   setTimeout(5000, () => (this.setState({ downloadUrl: '' }).bind(this)));
-        // });
       });
   }
 
