@@ -21,7 +21,7 @@ const Home = props => (
             <Link to="/">Home</Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item className="shadow-box" componentClass="spann">
-            <Link to="/zmanim">Zmanim</Link>
+            <Link to="/events">Events</Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item className="shadow-box" componentClass="spann">
             <Link to="/List">Shuirim</Link>

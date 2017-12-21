@@ -12,6 +12,7 @@ import Zmanim from './components/zmanim.jsx';
 import Home from './components/home.jsx';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
+import Events from './components/Events.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -112,9 +113,9 @@ class App extends React.Component {
             )}
           />
           <Route
-            path="/zmanim"
+            path="/events"
             render={props => (
-              <Zmanim {...props} timeprops={{ zmanim: this.state.zmanim, schedule: this.state.schedule }} />
+              <Events {...props} />
             )}
           />
           <Route
