@@ -30,6 +30,12 @@ body{
 
 
 }
+
+.events{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .donate{
   float: right;
   margin-top:  5px;
@@ -90,6 +96,7 @@ input:focus {
 }
 
  .zman-title{
+   font-size: 125%;
    margin-bottom: 0px;
    text-align: center;
    text-decoration: underline;

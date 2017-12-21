@@ -3,6 +3,7 @@ import Slideshow from './slideshow.jsx';
 import Columns from 'react-columns';
 import Zman from './zman.jsx';
 import Donate from './donate.jsx';
+import Shachris from './Shachris.jsx';
 
 const Home = props => (
   <div className="main-body ">
@@ -12,24 +13,18 @@ const Home = props => (
         {props.timeprops.zmanim.map((zman, i) => (<Zman key={zman[1]} zman={zman} />))}
       </div>
       <div>
+        <Shachris />
         <div className="zmanim">
           <h4 className="shadow-box zman-title">Shabbas Schedule</h4>
           {props.timeprops.schedule.map((zman, i) => (<Zman key={zman[1]} zman={zman} />))}
         </div>
         <div className="zmanim">
-          <h4 className="shadow-box zman-title">Shuirim</h4>
+          <h4 className="shadow-box zman-title"> Beitzah Shuir</h4>
           <div className="shadow-box">
             <Columns columns={2}>
-              <text className="left">Tuesdays  <br />
-                Halacha
+              <text className="left">Tuesdays, Thursdays
               </text>
-              <text className="right">9:00 pm</text>
-            </Columns>
-          </div>
-          <div className="shadow-box">
-            <Columns columns={2}>
-              <text className="left">Thursdays<br />Beitzei</text>
-              <text className="right">9:00 pm</text>
+              <text className="right">9:00 PM</text>
             </Columns>
           </div>
         </div>

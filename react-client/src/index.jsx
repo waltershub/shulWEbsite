@@ -12,7 +12,8 @@ import Zmanim from './components/zmanim.jsx';
 import Home from './components/home.jsx';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
-import Events from './components/Events.jsx';
+import Events from './components/events.jsx';
+import Simchas from './components/simchas.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +23,8 @@ class App extends React.Component {
       zmanim: [],
       schedule: [],
       shulImages: [],
+      events: [],
+      simchas: [],
       playlist: '',
       autoplay: true,
     };
@@ -115,7 +118,13 @@ class App extends React.Component {
           <Route
             path="/events"
             render={props => (
-              <Events {...props} />
+              <Events {...props} events={this.state.events} />
+            )}
+          />
+          <Route
+            path="/simchas"
+            render={props => (
+              <Simchas {...props} simchas={this.state.simcahs} />
             )}
           />
           <Route
