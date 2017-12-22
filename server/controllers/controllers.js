@@ -46,6 +46,10 @@ exports.signedUrl = (req, res) => {
   });
 };
 
+exports.events = (req, res) => {
+
+};
+
 exports.shulImages = (req, res) => {
   const folder = '../images';
   fs.readdir(folder, (err, files) => {

@@ -10,7 +10,7 @@ const Home = props => (
     <Columns columns={2}>
       <div className="zmanim">
         <h4 className="shadow-box zman-title">Zmanim</h4>
-        {props.timeprops.zmanim.map((zman, i) => (<Zman key={zman[1]} zman={zman} />))}
+        {props.timeprops.zmanim.map((zman, i) => (<Zman className={`${i === 0 || i === props.timeprops.zmanim.length - 1 ? zman[0] : ''}`} key={zman[1]} zman={zman} />))}
       </div>
       <div>
         <Shachris />

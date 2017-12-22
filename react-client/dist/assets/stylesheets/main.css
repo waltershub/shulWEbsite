@@ -44,8 +44,8 @@ body{
 }
 
 .donateImg{
-  height: 70%;
-  width:70%;
+  height: 90%;
+  width: 90%;
   cursor: pointer;
 }
 
@@ -94,6 +94,7 @@ input:focus {
    background: rgba(0, 0, 0, 0.7);*/
    padding: 10px;
 }
+
 
  .zman-title{
    font-size: 125%;
@@ -190,6 +191,18 @@ a {
 float: left;
 }
 
+.Date{
+  padding-bottom: 40px;
+}
+
+.CandleLighting{
+  padding-bottom: 85px;
+}
+
+.Datetext{
+  font-size: 110%;
+  text-decoration: underline;
+}
 .right{
   float: right;
 }
