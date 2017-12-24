@@ -49,6 +49,12 @@ body{
   cursor: pointer;
 }
 
+.event-title{
+  font-size: 200%;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
+
 .pulse {
   cursor: pointer;
 	animation-name: pulse_animation;

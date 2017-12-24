@@ -44,7 +44,7 @@ class List extends React.Component {
             controls
           />
           <Columns coloums="2" className="shuirim">
-            {this.props.shuirimprops.shuirim.map((shuir, i) => (<Shuir key={shuir.id || uniqueId()} url={this.state.downloadUrl} download={this.getDownload}shuir={shuir} index={i} setplaying={this.props.shuirimprops.setplaying} />))}
+            {this.props.shuirimprops.shuirim.map((shuir, i) => (<Shuir key={shuir.id || uniqueId()} download={this.getDownload}shuir={shuir} index={i} setplaying={this.props.shuirimprops.setplaying} />))}
           </Columns>
         </div>
       </center>);
