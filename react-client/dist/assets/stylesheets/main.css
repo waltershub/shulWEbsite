@@ -32,9 +32,11 @@ body{
 }
 
 .events{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 50%;
+}
+
+.event{
+  padding: 20px;
 }
 .donate{
   float: right;
@@ -202,7 +204,7 @@ float: left;
 }
 
 .CandleLighting{
-  padding-bottom: 85px;
+  padding-bottom: 35px;
 }
 
 .Datetext{

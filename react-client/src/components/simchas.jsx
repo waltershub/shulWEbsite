@@ -1,11 +1,14 @@
 import React from 'react';
 
-const Simchas = () => (
-  <div className="events">
-    <h1 className="zman-title">
+const Simchas = props => (
+  <center>
+    <div className="zmanim events">
+      <h1 className="shadow-box event-title">
       Simchas
-    </h1>
-  </div>
+      </h1>
+      {props.simchas && props.simchas.map(newevent => (<Event key={uniqueId()} event={newevent} />))}
+    </div>
+  </center>
 );
 
 export default Simchas;

@@ -16,7 +16,9 @@ router.get('/shulImages', controllers.shulImages);
 
 router.post('/signedUrl', controllers.signedUrl);
 
-router.get('/events', controllers.events);
+router.get('/event', controllers.events);
+
+router.get('/simcha', controllers.simchas);
 
 router.get('/*', (req, res) => res.sendFile(path.join(__dirname, '/../../react-client/dist/index.html')));
 

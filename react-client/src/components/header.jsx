@@ -21,10 +21,10 @@ const Home = props => (
             <Link to="/">Home</Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item className="shadow-box" componentClass="spann">
-            <Link to="/events">Events</Link>
+            <Link to="/Events">Events</Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item className="shadow-box" componentClass="spann">
-            <Link to="/simchas">Simchas</Link>
+            <Link to="/Simchas">Simchas</Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item className="shadow-box" componentClass="spann">
             <Link to="/List">Shuirim</Link>

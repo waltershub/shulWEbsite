@@ -25,7 +25,7 @@ exports.generatTime = (date, subtract, add) => {
 exports.generateShulSchedule = (date, shkia, eruvShabbossOffset = 8, shabbosDayOffset = 25, marivAfterOffset = 50, shachris = '09:00', earlyMincha = null, morningShuir = '08:45') => {
   const fridayNightShedule = [['Mincha/Kabbalos Shabbos', exports.generatTime(`${date} ${shkia}`, eruvShabbossOffset)]];
   const shabbosDaySchedule = [['Chumash Shuir', exports.generatTime(`${date} ${morningShuir}`)], ['Shachris', exports.generatTime(`${date} ${shachris}`)], ['Mincha', exports.generatTime(`${date} ${shkia}`, shabbosDayOffset)], ['Maariv', exports.generatTime(`${date} ${shkia}`, shabbosDayOffset, marivAfterOffset)], ['Rabbeinu Tam', exports.generatTime(`${date} ${shkia}`, shabbosDayOffset, 72)]];
-  shabbosDaySchedule.push(['Winter Months Avos Ubanim', '6:00 PM']);
+  // shabbosDaySchedule.push(['Winter Months Avos Ubanim', '6:00 PM']);
   return fridayNightShedule.concat(shabbosDaySchedule);
 };
 

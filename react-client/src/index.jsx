@@ -12,7 +12,7 @@ import Zmanim from './components/zmanim.jsx';
 import Home from './components/home.jsx';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
-import Events from './components/events.jsx';
+import Event from './components/events.jsx';
 import Simchas from './components/simchas.jsx';
 
 class App extends React.Component {
@@ -36,13 +36,32 @@ class App extends React.Component {
     this.setplaying = this.setplaying.bind(this);
     this.autoplayrefset = this.autoplayrefset.bind(this);
     this.stopPlaying = this.stopPlaying.bind(this);
+    //  this.getSimchas = this.getSimchas.bind(this);
+    this.getEvenets = this.getEvents.bind(this);
     this.getShuirim();
     this.getZmanim();
+    // this.getSimchas();
+    this.getEvents();
     this.getShulSchedule();
   }
 
   componentDidMount() {
     this.getShulImages();
+  }
+
+  getSimchas() {
+    axios.get('simcha')
+      .then((response) => {
+        this.setState({ simchas: response.data });
+      });
+  }
+
+  getEvents() {
+    axios.get('event')
+      .then((response) => {
+        console.log('data', response.data);
+        this.setState({ events: response.data });
+      });
   }
 
   getShuirim() {
@@ -55,6 +74,7 @@ class App extends React.Component {
             name: shuir.title.slice(0, shuir.title.length - 4),
             src: shuir.url,
             img: '/assets/images/slideshow/8.png',
+            id: shuir.uniqId,
           });
           // this.setState({ playlist: playlist[0] });
           this.setState({ shuirim: playlist });
@@ -116,15 +136,15 @@ class App extends React.Component {
             )}
           />
           <Route
-            path="/events"
+            path="/Events"
             render={props => (
-              <Events {...props} events={this.state.events} />
+              <Event {...props} events={this.state.events} />
             )}
           />
           <Route
-            path="/simchas"
+            path="/Simchas"
             render={props => (
-              <Simchas {...props} simchas={this.state.simcahs} />
+              <Simchas {...props} simchas={this.state.simchas} />
             )}
           />
           <Route

@@ -7,7 +7,8 @@ const { generateSignedUrl, updateConfig } = require('./signed-url.js');
 
 updateConfig();
 exports.shuirim = (req, res) => {
-  db.Shuirim.scan()
+  db.Shuirim.scan('SharHashamayim')
+    .where('shul').beginsWith('SharHashamayim')
     .loadAll()
     .exec((err, data) => {
       res.send(data);
@@ -47,7 +48,25 @@ exports.signedUrl = (req, res) => {
 };
 
 exports.events = (req, res) => {
+  console.log('events');
+  db.Events.scan('SharHashamayim')
+    .where('shul').beginsWith('SharHashamayim')
+    .loadAll()
+    .exec((err, data) => {
+      const today = moment();
+      console.log(data);
+      res.send(data.Items.filter(date => !today.isSameOrAfter(date.date)));
+    });
+};
+exports.simchas = (req, res) => {
+  db.Simchas.scan('SharHashamayim')
+    .where('shul').beginsWith('SharHashamayim')
+    .loadAll()
+    .exec((err, data) => {
+      const today = moment();
 
+      res.send(data.Items.filter(date => !today.isSameOrAfter(date.date)) || []);
+    });
 };
 
 exports.shulImages = (req, res) => {

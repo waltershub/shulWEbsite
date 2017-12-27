@@ -5,7 +5,7 @@ import Columns from 'react-columns';
 import ReactDOM from 'react-dom';
 import ReactAudioPlayer from 'react-audio-player';
 import axios from 'axios';
-import uniqueId from 'lodash.uniqueid';
+// import uniqueId from 'lodash.uniqueid';
 
 
 class List extends React.Component {
@@ -44,7 +44,7 @@ class List extends React.Component {
             controls
           />
           <Columns coloums="2" className="shuirim">
-            {this.props.shuirimprops.shuirim.map((shuir, i) => (<Shuir key={shuir.id || uniqueId()} download={this.getDownload}shuir={shuir} index={i} setplaying={this.props.shuirimprops.setplaying} />))}
+            {this.props.shuirimprops.shuirim.map((shuir, i) => (<Shuir key={shuir.id} download={this.getDownload}shuir={shuir} index={i} setplaying={this.props.shuirimprops.setplaying} />))}
           </Columns>
         </div>
       </center>);

@@ -3,13 +3,43 @@ const Joi = require('joi');
 const { config } = require('../config/config');
 const s3 = require('s3');
 
-dynamo.AWS.config.update(config.aws);
+
+dynamo.AWS.config.update(process.env.aws || config.aws);
 
 const Shuirim = dynamo.define('Shuirim', {
-  hashKey: 'title',
+  hashKey: 'uniqId',
+  rangeKey: 'shul',
   schema: {
+    shul: Joi.string(),
     title: Joi.string(),
     url: Joi.string(),
+    uniqId: dynamo.types.uuid(),
+  },
+});
+
+const Events = dynamo.define('Event', {
+  hashKey: 'uniqId',
+  rangeKey: 'shul',
+  schema: {
+    shul: Joi.string(),
+    event: Joi.string(),
+    location: Joi.string(),
+    time: Joi.string(),
+    date: Joi.string(),
+    uniqId: dynamo.types.uuid(),
+  },
+});
+
+const Simchas = dynamo.define('Simcah', {
+  hashKey: 'uniqId',
+  rangeKey: 'shul',
+  schema: {
+    shul: Joi.string(),
+    event: Joi.string(),
+    location: Joi.string(),
+    time: Joi.string(),
+    date: Joi.string(),
+    uniqId: dynamo.types.uuid(),
   },
 });
 
@@ -33,4 +63,6 @@ const client = s3.createClient({
 
 
 exports.Shuirim = Shuirim;
+exports.Events = Events;
+exports.Simchas = Simchas;
 exports.Bucket = client;
