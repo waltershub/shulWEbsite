@@ -4,7 +4,7 @@ const Joi = require('joi');
 const s3 = require('s3');
 
 
-dynamo.AWS.config.update(process.env.aws || config.aws);
+dynamo.AWS.config.update({ accessKeyId: process.env.accessKeyId, secretAccessKey: process.env.secretAccessKey, region: process.env.region });
 
 const Shuirim = dynamo.define('Shuirim', {
   hashKey: 'uniqId',
