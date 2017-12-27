@@ -1,6 +1,6 @@
 const dynamo = require('dynamodb');
 const Joi = require('joi');
-const { config } = require('../config/config');
+// const { config } = require('../config/config');
 const s3 = require('s3');
 
 
