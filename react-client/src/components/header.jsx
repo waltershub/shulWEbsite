@@ -17,16 +17,16 @@ const Home = props => (
       </span>
       <small>
         <Breadcrumb >
-          <Breadcrumb.Item className="shadow-box"componentClass="spann">
+          <Breadcrumb.Item className="link"componentClass="spann">
             <Link to="/">Home</Link>
           </Breadcrumb.Item>
-          <Breadcrumb.Item className="shadow-box" componentClass="spann">
+          <Breadcrumb.Item className="link" componentClass="spann">
             <Link to="/Events">Events</Link>
           </Breadcrumb.Item>
-          <Breadcrumb.Item className="shadow-box" componentClass="spann">
+          <Breadcrumb.Item className="link" componentClass="spann">
             <Link to="/Simchas">Simchas</Link>
           </Breadcrumb.Item>
-          <Breadcrumb.Item className="shadow-box" componentClass="spann">
+          <Breadcrumb.Item className="link" componentClass="spann">
             <Link to="/List">Shuirim</Link>
           </Breadcrumb.Item>
         </Breadcrumb>

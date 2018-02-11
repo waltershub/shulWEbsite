@@ -12,6 +12,21 @@
   /*background: #419be0;*/
 }
 
+.breadcrumb {
+    justify-content: center;
+}
+
+.link{
+  color: white;
+   /*font: bold 24px/45px Helvetica, Sans-Serif;*/
+   /*letter-spacing: -1px;*/
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px;
+   padding-bottom: 0px;
+   margin-bottom:  0px;
+}
+
 /*.main-body{
   margin-left: 50px;
   margin-right: 50px;

@@ -22162,7 +22162,7 @@ var Home = function Home(props) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Breadcrumb.Item,
-            { className: 'shadow-box', componentClass: 'spann' },
+            { className: 'link', componentClass: 'spann' },
             _react2.default.createElement(
               _reactRouterDom.Link,
               { to: '/' },
@@ -22171,7 +22171,7 @@ var Home = function Home(props) {
           ),
           _react2.default.createElement(
             _reactBootstrap.Breadcrumb.Item,
-            { className: 'shadow-box', componentClass: 'spann' },
+            { className: 'link', componentClass: 'spann' },
             _react2.default.createElement(
               _reactRouterDom.Link,
               { to: '/Events' },
@@ -22180,7 +22180,7 @@ var Home = function Home(props) {
           ),
           _react2.default.createElement(
             _reactBootstrap.Breadcrumb.Item,
-            { className: 'shadow-box', componentClass: 'spann' },
+            { className: 'link', componentClass: 'spann' },
             _react2.default.createElement(
               _reactRouterDom.Link,
               { to: '/Simchas' },
@@ -22189,7 +22189,7 @@ var Home = function Home(props) {
           ),
           _react2.default.createElement(
             _reactBootstrap.Breadcrumb.Item,
-            { className: 'shadow-box', componentClass: 'spann' },
+            { className: 'link', componentClass: 'spann' },
             _react2.default.createElement(
               _reactRouterDom.Link,
               { to: '/List' },
